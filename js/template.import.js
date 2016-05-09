@@ -5,6 +5,7 @@ var $template = {
             var item = $(items[i]);
             if (item.data("async") == true)
                 continue;
+            $.ajaxSetup({ dataType: "jsonp" });
             $.ajax({
                 url : item.attr("data-import"),
                 type : 'GET',
